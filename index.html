@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pl-PL">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="UTF-8"/>
+        <meta name="author" content="Karol Jurczyński"/>
+        <meta name="description" content="Strona internetowa"/>
+        <meta name="keywords" content="Strona, webpage"/>
+        <link rel="stylesheet" href="style.css"/>
+        <script src="script.js" defer></script>
+        <title>BlackjackJS</title>
+    </head>
+    <body>
+        <header>
+            <h1>blackjack.JS</h1>
+            <button id="darkModeButton"><img src="dark_mode.png"></button>
+        </header>
+        <div class="Wrapper">
+            <div class="Nested">
+                <main class="GridItem">     
+                    <div class="Cards" id="deckCards">
+                        <img src="playing_cards/back1.png"/>
+                        <img src="playing_cards/back1.png"/>
+                        <img src="playing_cards/back1.png"/>
+                    </div>
+                    <div class="Cards tableCards" id="tableDealersCards"></div>          
+                </main>
+                <div id="desk" class="GridItem">
+                    <div id="tablePlayersCards" class="Cards tableCards"></div>
+                    <div class="ButtonBox" id="mainButtons">
+                        <button id="hitButton" class="MenuButton">Hit</button>
+                        <button id="standButton" class="MenuButton">Stand</button>
+                        <button id="raiseButton" class="MenuButton">Raise</button>
+                    </div>
+                    <div class="ButtonBox" id="slider">
+                        <input type="range" id="stakeSlider" name="stake" min="1" max="1" oninput="showLiveStake()" value="1"/>
+                        <label id="stakeLabel" for="stake" class="SliderInfo">1</label>
+                        <button id="accept" class="MenuButton">Accept</button>
+                    </div>
+                    <div class="ButtonBox" id="aceButtons">
+                        <button id="one" class="MenuButton">1</button>
+                        <button id="eleven" class="MenuButton">11</button>
+                    </div>
+                    <div class="ButtonBox" id="playAgainBox">
+                        <button id="exit" class="MenuButton">Exit</button>
+                        <button id="playAgain" class="MenuButton">Play again</button>
+                    </div>
+                </div>
+            </div>
+        <nav class="GridItem">
+            <div class="Info Panel">
+                <h1><span id="winner">Status</span></h1><br/>
+                <h2>Dealer's points: <span id="dealersPoints">0</span></h2>
+                <h2>Player's points: <span id="playersPoints">0</span></h2><br/>
+                <h2>Cash amount: <span id="playersCash"></span>$</h2>
+            </div>
+            <div class="Stake Panel">
+                <h2>Stake: <span id="stake">0</span>$</h2>
+            </div>      
+        </nav>
+            
+        </div>
+    </body>
+</html>
